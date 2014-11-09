@@ -8,7 +8,7 @@ var bio={
 			"email":"a@kk.com",
 			"github" : "aui3",
 			"twitter" : "@ayeshanizami",
-			"location" : "Irvine"
+			"location" : "Irvine,CA"
 		},
 		
 		"welcomeMessage" : "Awesome Front-End Web Developer in Training!",	
@@ -22,19 +22,22 @@ var work ={
  		"employer" : "UBL",
  		"title" : "Relationship Manager",
  		"dates" : "November 2004 -November 2007",
- 		"description" : "Relationship manager Job description for Commercial Banking Group."
+ 		"description" : "Relationship manager Job description for Commercial Banking Group.",
+ 		"location" : "Karachi, Pakistan"
  	},
  	{	
  		"employer" : "Lowe & Rauf",
  		"title" : "Account Executive",
  		"dates" : "March 2008 - May 2009",
- 		"description" : "Account Executive for Nestle Group"
+ 		"description" : "Account Executive for Nestle Group",
+ 		"location" : "Houston, TX"
  	},
  	{	
  		"employer" : "HBL",
  		"title" : "Branch Manager",
  		"dates" : "February 2010 - December 2010",
- 		"description" : "Bracnh Manger job description. The quick brown fox jumped over the lazy dog has all alphabets in the English language."
+ 		"description" : "Bracnh Manger job description. The quick brown fox jumped over the lazy dog has all alphabets in the English language.",
+ 		"location" : "Pasadena, CA"
  	}
 
  ]
@@ -56,7 +59,7 @@ var education= {
 			"name" : "LUMS1",
 			"major" : "Computer Science1",
 			"minor" : ["Mathematics1", "Economics1"],
-			"location" : "Lahore1,  Pakistan1",
+			"location" : "Lahore,  Pakistan",
 			"url" : "www.lums.edu.pk",
 			"dates" : "20041",
 			"url" : "www.fake.com"
@@ -94,15 +97,15 @@ var projects = {
 	 		"dates" : " March 2013",
 	 		"description" : " Arcade game Asteroids",
 	 		"images" : [
-	 		 "image1", " image2 "
+	 		 "images/projects.gif", "images/projects.gif"
 	 		]
 	 	},
 	 	{
 	 		"title": "CodePlayer",
 	 		"dates" : "November 2014",
-	 		"description" : " ",
+	 		"description" : "This is the description for Codeplayer which is a pretty neat project that i recently did and that also uses js and jquery",
 	 		"images" : [
-	 		 "image2 ", "image3 "
+	 		 "images/projects.gif", "images/projects.gif"
 	 		]
 
 	 	}
@@ -167,10 +170,51 @@ displaywork();
 
 projects.displayProjects= function(){
 
+/*
+"projects" : [
+	 	{
+	 		"title": "Asteroids ",
+	 		"dates" : " March 2013",
+	 		"description" : " Arcade game Asteroids",
+	 		"images" : [
+	 		 "image1", " image2 "
+	 		]
+	 	}
+*/
+	if( projects["projects"].length> 0)
+	{
+		for (project in projects["projects"])
+		{
+			var title=HTMLprojectTitle;
+			var dates=HTMLprojectDates;
+			
+			var description=HTMLprojectDescription;
+
+			$("#projects").append(HTMLprojectStart);
+
+			title=title.replace("%data%", projects["projects"][project]["title"]);
+			dates=dates.replace("%data%",projects["projects"][project]["dates"]);
+			description=description.replace("%data%",projects["projects"][project]["description"]);		
+			
+			var formattedProjectInfo= title+dates+description;
+			
+			$(".project-entry:last").append(formattedProjectInfo);
+
+			for (image in projects["projects"][project]["images"])
+			{
+				var images=HTMLprojectImage;
+				images=images.replace("%data%", projects["projects"][project]["images"][image]);
+				$(".project-entry:last").append(images);
+			}
+						
 
 
+		}
+	}
+	
 }
 
+projects.displayProjects();
 //internationalise
 //$("#main").append(internationalizeButton);
 
@@ -192,3 +236,6 @@ $(document).click(function(loc){
 	logClicks(loc.pageX,loc.pageY);
 
 });
+
+//MAP
+$(mapDiv).append(googleMap);
