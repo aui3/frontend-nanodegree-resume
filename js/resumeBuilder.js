@@ -1,20 +1,84 @@
+var bio =
+{
+	"name": "Ayesha Ilyas",
+	"role" : "Web Developer",
 
-var bio={
-		"name": "Ayesha Ilyas",
-		"role" : "Web Developer",
+	"contacts" : {
+		"mobile": "626-394-9359",
+		"email":"a@kk.com",
+		"github" : "aui3",
+		"twitter" : "@ayeshanizami",
+		"location" : "Irvine,CA"
+	},
+
+	"welcomeMessage" : "Awesome Front-End Web Developer in Training!",	
+	"skills" : ["HTML", "CSS", "JavaScript", "JQuery"]	,
+	"bioPic": "images/fry.jpg"
+}
+
+bio.displayBio=function(){	//SKILLS
+	
+	var formattedName=bio["name"];
+	var formattedRole=bio["role"];
+
+	formattedName=HTMLheaderName.replace("%data%", formattedName);
+	//console.log(HTMLheaderName);
+
+
+	 formattedRole= HTMLheaderRole.replace("%data%",formattedRole);
+	$("#header").prepend(formattedRole);
+	$("#header").prepend(formattedName);
+
+	
+ 	
+
+	var formattedMobile=HTMLmobile.replace("%data%", bio["contacts"]["mobile"]);
+	$("#topContacts").append(formattedMobile);
+
+	var formattedEmail=HTMLemail.replace("%data%", bio["contacts"]["email"]);
+	$("#topContacts").append(formattedEmail);
+
+	var formattedTwitter=HTMLtwitter.replace("%data%", bio["contacts"]["twitter"]);
+	$("#topContacts").append(formattedTwitter);
+
+	var formattedGitHub=HTMLgithub.replace("%data%", bio["contacts"]["github"]);
+	$("#topContacts").append(formattedGitHub);
+
+	var formattedLocation=HTMLlocation.replace("%data%", bio["contacts"]["location"]);
+	$("#topContacts").append(formattedLocation);
+
+	var formattedHTMLbioPic=HTMLbioPic.replace("%data%", bio["bioPic"]);
+	$('#header').append(formattedHTMLbioPic);
+
+	if (bio["skills"].length!= 0)
+	{
+
+
+		$("#header").append(HTMLskillsStart); //add 'skills at a glance' header
 		
-		"contacts" : {
-			"mobile": "626-394-9359",
-			"email":"a@kk.com",
-			"github" : "aui3",
-			"twitter" : "@ayeshanizami",
-			"location" : "Irvine,CA"
-		},
-		
-		"welcomeMessage" : "Awesome Front-End Web Developer in Training!",	
-		"skills" : ["HTML", "CSS", "JavaScript", "JQuery"]	,
-		"bioPic": "www.mypicture.com"
-		}
+		/*var skillsdata="";
+
+		for (s in bio["skills"]){
+
+			skillsdata=skillsdata.concat(bio["skills"][s]);
+			skillsdata=skillsdata.concat("	");
+		};
+
+		HTMLskills=HTMLskills.replace("%data%", skillsdata);
+		$("#skillsH3").append(HTMLskills);
+
+		*/
+		//try another way of making skills
+		//alert($("#skills").html());
+		for (s in bio["skills"]){
+			
+			var skill=HTMLskills.replace("%data%",bio["skills"][s]);
+			
+			$("#skills").append(skill);
+		}		
+	}
+
+}
 
 var work ={
  "jobs" : [
@@ -41,103 +105,15 @@ var work ={
  	}
 
  ]
-}	
-
-var education= {
-	"schools": [
-		{
-			"name" : "LUMS",
-			"major" : "Computer Science",
-			"minor" : ["Mathematics", "Economics"],
-			"location" : "Lahore, Pakistan",
-			"dates" : "2004",
-			"url" : "www.lums.edu.pk"
-
-		},
-		
-		{
-			"name" : "LUMS1",
-			"major" : "Computer Science1",
-			"minor" : ["Mathematics1", "Economics1"],
-			"location" : "Lahore,  Pakistan",
-			"url" : "www.lums.edu.pk",
-			"dates" : "20041",
-			"url" : "www.fake.com"
-
-		}			
-	],
-
-	"onlineCourses" : [
-		{
-			"name" :  "Udacity", 
-			"url" : "www.fake.com",
-			"major" : "Computer Science",
-			"minor" : "Front End Web Development",
-			"city" : "Mountain View, CA",
-			"dates" : "2015",
-			"url" : "wwdatesw.udacity.com"	
-		},
-		{
-			"name" : "Coursera",
-			"major" : "Computer Science",
-			"minor" : "Data Science",
-			"city" : "USA",
-			"dates" : "2015",
-			"url" : "www.coursear.com"	
-		}
-
-	]
-
 }
-
-var projects = {
- 	"projects" : [
-	 	{
-	 		"title": "Asteroids ",
-	 		"dates" : " March 2013",
-	 		"description" : " Arcade game Asteroids",
-	 		"images" : [
-	 		 "images/projects.gif", "images/projects.gif"
-	 		]
-	 	},
-	 	{
-	 		"title": "CodePlayer",
-	 		"dates" : "November 2014",
-	 		"description" : "This is the description for Codeplayer which is a pretty neat project that i recently did and that also uses js and jquery",
-	 		"images" : [
-	 		 "images/projects.gif", "images/projects.gif"
-	 		]
-
-	 	}
- 	]
-}
-
-//SKILLS
-if (bio["skills"].length!= 0)
-{
-	
-	$("#header").append(HTMLskillsStart); //add 'skills at a glance' header
-	var skillsdata="";
-
-	for (s in bio["skills"]){
-
-		skillsdata=skillsdata.concat(bio["skills"][s]);
-		skillsdata=skillsdata.concat("	");
-	};
-
-	HTMLskills=HTMLskills.replace("%data%", skillsdata);
-	$("#skills").append(HTMLskills);
-
-}
-
-
 //WORK
-function displaywork(){
+work.displayWork=function(){
 //check if skills are present in bio
 	//update work section
 
 	if (work["jobs"].length >0)
 	{
+		//$("#workExperience").append(HTMLworkStart);
 		for( job in work["jobs"])
 
 		{
@@ -164,23 +140,124 @@ function displaywork(){
 }
 
 
-displaywork();
+var education= {
+	"schools": [
+		{
+			"name" : "LUMS",
+			"degree" : "BSc Honors",
+			"dates" : "2004",
+			"location" : "Lahore, Pakistan",
+			"major" : "Computer Science"
+			
+		},
+		
+		{
+			"name" : "LUMS1",
+			"degree" : "BSc Honors",
+			"dates" : "20041",
+			"location" : "Lahore,  Pakistan",
+			"major" : "Computer Science1"
 
-//PROJECTS
+		}			
+	],
 
-projects.displayProjects= function(){
+	"onlineCourses" : [
+		{
+			"title" :  "Front End Web Development", 
+			"school" : "Udacity",
+			"dates" : "2014",
+			"url" : "www.udacity.com"	
+		},
+		{
+			"title" : "Data Science",
+			"school" : "Coursera",
+			"dates" : "2013",
+			"url" : "www.coursera.com"	
+		}
 
-/*
-"projects" : [
+	]
+
+}
+
+education.displayEducation=function(){
+
+	
+	for( school in education.schools){
+
+		$("#education").append(HTMLschoolStart);
+
+		var formattedSchoolName=HTMLschoolName.replace("%data%",education.schools[school]["name"]);
+		//$(".education-entry:last").append(formattedSchoolName);
+		//alert(formattedSchoolName);
+
+		var formattedSchoolDegree=HTMLschoolDegree.replace("%data%",education.schools[school]["degree"]);
+		//$(".education-entry:last").append(formattedSchoolDegree);
+
+		var formattedDates=HTMLschoolDates.replace("%data%",education.schools[school]["dates"]);
+		//$(".education-entry:last").append(formattedDates);
+
+		var formattedLocation=HTMLschoolLocation.replace("%data%",education.schools[school]["location"]);
+		//$(".education-entry:last").append(formattedLocation);		
+
+		var formattedMajor=HTMLschoolMajor.replace("%data%",education.schools[school]["major"]);
+		//$(".education-entry:last").append(formattedMajor);
+		 var formattedEducation=formattedSchoolName+formattedSchoolDegree+formattedDates+formattedLocation+formattedMajor;
+		 //alert(formattedEducation);	
+		 $(".education-entry:last").append(formattedEducation);	
+	}
+
+	/*
+	var HTMLonlineClasses = "<h3>Online Classes</h3>";
+var HTMLonlineTitle = "<a href='#'>%data%";
+var HTMLonlineSchool = " - %data%</a>";
+var HTMLonlineDates = "<div class='date-text'>%data%</div>";
+var HTMLonlineURL = "<br><a href='#'>%data%</a>";
+	*/	
+	$(".education-entry:last").append(HTMLonlineClasses);
+	//alert(education.onlineCourses[0]["title"]);	
+	for (online in education.onlineCourses)
+	{
+		var formattedTitle=HTMLonlineTitle.replace("%data%",education.onlineCourses[online]["title"]);
+			
+		var formattedSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[online]["school"]);
+		
+		var formattedDates=HTMLonlineDates.replace("%data%",education.onlineCourses[online]["dates"]);
+		//alert(formattedDates);
+		var formattedURL=HTMLonlineURL.replace("%data%",education.onlineCourses[online]["url"]);
+
+		var formattedOnlineCourse=formattedTitle+formattedSchool+formattedDates+formattedURL;
+		//alert(formattedOnlineCourse);
+		$(".education-entry:last").append(formattedOnlineCourse);		
+
+
+	}
+}
+
+var projects = {
+ 	"projects" : [
 	 	{
 	 		"title": "Asteroids ",
 	 		"dates" : " March 2013",
 	 		"description" : " Arcade game Asteroids",
 	 		"images" : [
-	 		 "image1", " image2 "
+	 		 "images/projects.gif", "images/projects.gif"
 	 		]
+	 	},
+	 	{
+	 		"title": "CodePlayer",
+	 		"dates" : "November 2014",
+	 		"description" : "This is the description for Codeplayer which is a pretty neat project that i recently did and that also uses js and jquery",
+	 		"images" : [
+	 		 "images/projects.gif", "images/projects.gif"
+	 		]
+
 	 	}
-*/
+ 	]
+}
+//PROJECTS
+
+projects.displayProjects= function(){
+
 	if( projects["projects"].length> 0)
 	{
 		for (project in projects["projects"])
@@ -214,7 +291,11 @@ projects.displayProjects= function(){
 	
 }
 
+
+bio.displayBio();
 projects.displayProjects();
+work.displayWork();
+education.displayEducation();
 //internationalise
 //$("#main").append(internationalizeButton);
 
