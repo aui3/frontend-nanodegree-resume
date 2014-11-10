@@ -129,6 +129,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-right: 0px;
   padding: 10px;
 }
 
@@ -206,7 +207,7 @@ span {
 
 #mapDiv {
   height: 400px;
-  width: 100%;
+  width: 50%;
   padding-bottom: 5%;
 }
 
@@ -216,4 +217,10 @@ span {
   .biopic {
     display: block;
   }
+}
+
+.skill-list
+{
+
+  display: inline;
 }

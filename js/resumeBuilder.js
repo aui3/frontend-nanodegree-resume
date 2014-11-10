@@ -296,6 +296,7 @@ bio.displayBio();
 projects.displayProjects();
 work.displayWork();
 education.displayEducation();
+
 //internationalise
 //$("#main").append(internationalizeButton);
 
