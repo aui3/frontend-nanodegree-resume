@@ -135,6 +135,7 @@ a {
 
 .center-content {
   padding: 5%;
+  padding-top: 3%;
 }
 
 ul {
@@ -159,15 +160,23 @@ img {
   font: 10px sans-serif;
   background-color: #4A4A4A;
   text-align: right;
-  padding: 3px;
-  margin: 1px;
+  padding: 6px;
+  margin: 5px;
   height: 12px;
-  color: white;
-  display: inline-block;
+  color: #F5AE23;
+  /*display: inline-block;*/
 }
 
 span {
   padding: 5px;
+}
+
+.center-skills{
+
+  padding:5%;
+  padding-top: 3%;
+  padding-bottom: 3%
+
 }
 
 #letsConnect {
@@ -207,7 +216,7 @@ span {
 
 #mapDiv {
   height: 400px;
-  width: 50%;
+  width: 100%;
   padding-bottom: 5%;
 }
 
