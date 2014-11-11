@@ -4,6 +4,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#main{
+
+  padding: 0px 30px 0px 30px;
+}
 
 
 .education-entry, .work-entry, .project-entry {

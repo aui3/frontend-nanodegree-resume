@@ -12,7 +12,7 @@ var bio =
 	},
 
 	"welcomeMessage" : "Awesome Front-End Web Developer in Training!",	
-	"skills" : ["HTML", "CSS", "JavaScript", "JQuery"]	,
+	"skills" : ["HTML", "CSS", "JavaScript", "JQuery", "Ajax", "Python"]	,
 	"bioPic": "images/fry.jpg"
 }
 
@@ -28,9 +28,8 @@ bio.displayBio=function(){	//SKILLS
 	 formattedRole= HTMLheaderRole.replace("%data%",formattedRole);
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
-
 	
- 	
+	//$("#header").append(HTMLTopContacts);
 
 	var formattedMobile=HTMLmobile.replace("%data%", bio["contacts"]["mobile"]);
 	$("#topContacts").append(formattedMobile);
@@ -50,26 +49,11 @@ bio.displayBio=function(){	//SKILLS
 	var formattedHTMLbioPic=HTMLbioPic.replace("%data%", bio["bioPic"]);
 	$('#header').append(formattedHTMLbioPic);
 
+	$("#header").append(HTMLWelcomeMsg.replace("%data%", bio["welcomeMessage"]));
 	if (bio["skills"].length!= 0)
 	{
 
-
 		$("#header").append(HTMLskillsStart); //add 'skills at a glance' header
-		
-		/*var skillsdata="";
-
-		for (s in bio["skills"]){
-
-			skillsdata=skillsdata.concat(bio["skills"][s]);
-			skillsdata=skillsdata.concat("	");
-		};
-
-		HTMLskills=HTMLskills.replace("%data%", skillsdata);
-		$("#skillsH3").append(HTMLskills);
-
-		*/
-		//try another way of making skills
-		//alert($("#skills").html());
 		for (s in bio["skills"]){
 			
 			var skill=HTMLskills.replace("%data%",bio["skills"][s]);
@@ -147,7 +131,8 @@ var education= {
 			"degree" : "BSc Honors",
 			"dates" : "2004",
 			"location" : "Lahore, Pakistan",
-			"major" : "Computer Science"
+			"major" : "Computer Science",
+			"url" :"www.lums.edu.pk"
 			
 		},
 		
@@ -156,7 +141,8 @@ var education= {
 			"degree" : "BSc Honors",
 			"dates" : "20041",
 			"location" : "Lahore,  Pakistan",
-			"major" : "Computer Science1"
+			"major" : "Computer Science1",
+			"url": "www.lums.edu.pk"
 
 		}			
 	],
@@ -290,12 +276,29 @@ projects.displayProjects= function(){
 	}
 	
 }
+function displaySkillChart(){
+	var data = [42, 23, 15, 16, 8, 16];
+	var label=["Html","CSS","JavaScript","JQuery","Ajax","Python"];
 
+	var x = d3.scale.linear()
+    .domain([0, d3.max(data)])
+    .range([0, 420]);
+
+	d3.select(".chart")
+  	.selectAll("div")
+    .data(data)
+  	.enter().append("div")
+    .style("width", function(d) { return x(d) + "px"; })
+    .text(function(d,i) { return label[i]; });
+
+}
 
 bio.displayBio();
 projects.displayProjects();
 work.displayWork();
 education.displayEducation();
+displaySkillChart();
+
 
 //internationalise
 //$("#main").append(internationalizeButton);

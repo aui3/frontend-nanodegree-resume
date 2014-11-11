@@ -41,7 +41,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   -->
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
+  <script src="http://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
+
   <meta name="viewport" content="width=device-width">
+
+  <title>Ayesha's Portfolio</title>
 </head>
 <body unresolved>
   <div id="main">
@@ -72,11 +76,15 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         <h2>Education</h2>
     </div>
     
-    <div id="skillsChart">
+    <div id="skillsChart"  >
       <h2>Skills Chart</h2>
+      <div class="chart center-skills">
+
+      </div>
+
     </div>
     
-    <div id="mapDiv">
+    <div id="mapDiv" class='gray'>
       <h2>Where I've Lived and Worked</h2>
     </div>
     
@@ -139,7 +147,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     //document.getElementById("education").style.display = "none";
     document.getElementById("education").style.backgroundColor = "black";
   }
-  if(document.getElementsByClassName("skills-entry").length === 0) {
+  if(document.getElementById("skillsH3").length === 0) {
     //document.getElementById("skillsChart").style.display = "none";
     document.getElementById("skillsChart").style.backgroundColor = "black";
   }
