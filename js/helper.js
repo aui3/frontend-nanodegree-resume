@@ -15,6 +15,7 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = "<h1 id='name'>%data%</h1>";
 var HTMLheaderRole = "<span>%data%</span><hr/>";
 
+//var HTMLTopContacts="<ul id='topContacts' class='flex-box'></ul>"
 var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
 var HTMLTopContacts="<ul id='topContacts' class='flex-box'></ul>"
 var HTMLmobile = "<li class='flex-item'><span class='orange-text'>mobile</span><span class='white-text'>%data%</span></li>";
@@ -39,7 +40,7 @@ var HTMLworkDescription = "<p><br>%data%</p>";
 
 var HTMLprojectStart = "<div class='project-entry'></div>";
 var HTMLprojectTitle = "<a href='#'>%data%</a>";
-var HTMLprojectDates = "<div class='date-text'>%data%</div> <div id='accordian'>";
+var HTMLprojectDates = "<div class='date-text'>%data%</div>";
 var HTMLprojectDescription = "<p><br>%data%</p>";
 var HTMLprojectImage = "<img src='%data%'>";
 
@@ -50,7 +51,7 @@ var HTMLschoolDates = "<div class='date-text'>%data%</div>";
 var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
 var HTMLschoolMajor = "<em><br>Major: %data%</em>"
 
-var HTMLonlineClasses = "<h3>Online Classes</h3>";
+var HTMLonlineClasses = "<br><br><h3>Online Classes</h3>";
 var HTMLonlineTitle = "<a href='#'>%data%";
 var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";

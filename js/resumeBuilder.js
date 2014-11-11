@@ -21,15 +21,17 @@ bio.displayBio=function(){	//SKILLS
 	var formattedName=bio["name"];
 	var formattedRole=bio["role"];
 
+	var formattedHTMLbioPic=HTMLbioPic.replace("%data%", bio["bioPic"]);
+	$('#header').append(formattedHTMLbioPic);
+
 	formattedName=HTMLheaderName.replace("%data%", formattedName);
-	//console.log(HTMLheaderName);
-
-
 	 formattedRole= HTMLheaderRole.replace("%data%",formattedRole);
-	$("#header").prepend(formattedRole);
-	$("#header").prepend(formattedName);
 	
-	//$("#header").append(HTMLTopContacts);
+	$("#header").append(formattedName);
+	$("#header").append(formattedRole);
+	
+
+	$("#header").append(HTMLTopContacts);
 
 	var formattedMobile=HTMLmobile.replace("%data%", bio["contacts"]["mobile"]);
 	$("#topContacts").append(formattedMobile);
@@ -46,8 +48,7 @@ bio.displayBio=function(){	//SKILLS
 	var formattedLocation=HTMLlocation.replace("%data%", bio["contacts"]["location"]);
 	$("#topContacts").append(formattedLocation);
 
-	var formattedHTMLbioPic=HTMLbioPic.replace("%data%", bio["bioPic"]);
-	$('#header').append(formattedHTMLbioPic);
+	
 
 	$("#header").append(HTMLWelcomeMsg.replace("%data%", bio["welcomeMessage"]));
 	if (bio["skills"].length!= 0)

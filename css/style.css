@@ -10,16 +10,18 @@
 }
 
 
-.education-entry, .work-entry, .project-entry {
+.education-entry, .work-entry,.project-entry {
   padding-left: 5%;
   padding-right: 5%;
+
 }
+
 
 
 h1 {
 
   font-size: 40px;
-  color: #F5A623;
+  color: #513831;
   line-height: 48px;
   display: inline;
 }
@@ -27,7 +29,7 @@ h1 {
 h2 {
   font-style: bold;
   font-size: 24px;
-  color: #999999;
+  color: #513831;
   line-height: 29px;
   padding: 10px;
 }
@@ -39,6 +41,10 @@ h3 {
   line-height: 22px;
 }
 
+.footer-text{
+color: #D0BC74;
+
+}
 h4 {
   font-style: bold;
   font-size: 14px;
@@ -46,7 +52,7 @@ h4 {
   line-height: 17px;
 }
 
-h2, h3, h4, h5 {
+h2, h4, h5 {
   padding:10px;
   padding-left: 5%;
   padding-right: 5%;
@@ -86,12 +92,14 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #513831;
+  margin-top: 20px;
+  margin-bottom: 20px;
   line-height: 28px;
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #513831;
   display: none;
 }
 
@@ -100,11 +108,14 @@ a {
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #513831;
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #513831;
 }
 
 .white-text {
@@ -113,18 +124,28 @@ a {
 }
 
 .gray {
-  background-color: #F3F3F3;
-  padding-bottom: 10px;
+  background-color: #FFF9EE;
+  margin-bottom: 10px;
+  border-radius: 10px;
   clear:both;
+}
+.colour{
+  background-color:#f4e8d2;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #D0BC74;
+  border-radius: 10px;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #D0BC74;
+  border-radius: 10px;
 }
 
 .flex-box {
@@ -152,6 +173,7 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  margin-right: 20px;
 }
 
 img {
@@ -207,6 +229,7 @@ span {
     width: 150px;
   }
   .welcome-message {
+
     display: none;
   }
 }
