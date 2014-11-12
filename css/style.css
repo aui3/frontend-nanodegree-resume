@@ -42,7 +42,7 @@ h3 {
 }
 
 .footer-text{
-color: #D0BC74;
+color: #FFFFFF;
 
 }
 h4 {
@@ -130,7 +130,7 @@ a {
   clear:both;
 }
 .colour{
-  background-color:#f4e8d2;
+  background-color:#FFF9EE;
   border-radius: 10px;
   margin-bottom: 10px;
 
@@ -184,12 +184,12 @@ img {
 /* Bar chart stuff */
 .chart div {
   font: 10px sans-serif;
-  background-color: #4A4A4A;
+  background-color: #513831;
   text-align: right;
   padding: 6px;
   margin: 5px;
   height: 12px;
-  color: #F5AE23;
+  color: #D0BC74;
   /*display: inline-block;*/
 }
 
