@@ -25,8 +25,8 @@ var HTMLgithub = "<li class='flex-item'><span class='orange-text'>github</span><
 var HTMLblog = "<li class='flex-item'><span class='orange-text'>blog</span><span class='white-text'>%data%</span></li>";
 var HTMLlocation = "<li class='flex-item'><span class='orange-text'>location</span><span class='white-text'>%data%</span></li>";
 
-var HTMLbioPic = "<img src='%data%' class='biopic'>";
-var HTMLWelcomeMsg = "<span class='welcome-message'>%data%</span>";
+var HTMLbioPic = "<img src='%data%' class='biopic' alt='Bio Pic'>";
+var HTMLWelcomeMsg = "<div id='welcomeMessage'><span class='welcome-message'>%data%</span></div>";
 
 var HTMLskillsStart = "<h3 id='skillsH3'>Skills at a Glance:</h3><ul id='skills' class='flex-box'></ul>";
 var HTMLskills = "<li class='flex-item skill-list'><span class='white-text'>%data%</span></li>";
@@ -39,20 +39,20 @@ var HTMLworkLocation = "<div class='location-text'>%data%</div>";
 var HTMLworkDescription = "<p><br>%data%</p>";
 
 var HTMLprojectStart = "<div class='project-entry'></div>";
-var HTMLprojectTitle = "<a href='#'>%data%</a>";
+var HTMLprojectTitle = "<a href='#'>-  %data%</a>";
 var HTMLprojectDates = "<div class='date-text'>%data%</div>";
 var HTMLprojectDescription = "<p><br>%data%</p>";
-var HTMLprojectImage = "<img src='%data%'>";
+var HTMLprojectImage = "<img src='%data%' alt='Project Picture'>";
 
 var HTMLschoolStart = "<div class='education-entry'></div>";
-var HTMLschoolName = "<a href='#'>%data%";
+var HTMLschoolName = "<a href='#'>-  %data%";
 var HTMLschoolDegree = " -- %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
 var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
 var HTMLschoolMajor = "<em><br>Major: %data%</em>"
 
 var HTMLonlineClasses = "<br><br><h3>Online Classes</h3>";
-var HTMLonlineTitle = "<a href='#'>%data%";
+var HTMLonlineTitle = "<a href='#'>-  %data%";
 var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
 var HTMLonlineURL = "<br><a href='#'>%data%</a>";
@@ -126,6 +126,7 @@ function initializeMap() {
     
     // initializes an empty array
     var locations = [];
+    
 
     // adds the single location property from bio to the locations array
     locations.push(bio.contacts.location);
@@ -134,12 +135,15 @@ function initializeMap() {
     // the locations array
     for (var school in education.schools) {
       locations.push(education.schools[school].location);
+      
+
     }
 
     // iterates through work locations and appends each location to
     // the locations array
     for (var job in work.jobs) {
       locations.push(work.jobs[job].location);
+
     }
 
     return locations;

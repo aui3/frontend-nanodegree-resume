@@ -1,25 +1,19 @@
 *{
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-#main{
-
+#main {
   padding: 0px 30px 0px 30px;
 }
-
 
 .education-entry, .work-entry,.project-entry {
   padding-left: 5%;
   padding-right: 5%;
-
 }
 
-
-
 h1 {
-
   font-size: 40px;
   color: #513831;
   line-height: 48px;
@@ -27,28 +21,25 @@ h1 {
 }
 
 h2 {
-  font-style: bold;
-  font-size: 24px;
+  font: bold 2px;
   color: #513831;
   line-height: 29px;
   padding: 10px;
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
+  font: italic 20px;
   color: #000000;
   line-height: 22px;
 }
 
-.footer-text{
-color: #FFFFFF;
-
+.footer-text {
+  color: #FFFFFF;
 }
+
 h4 {
-  font-style: bold;
-  font-size: 14px;
-  color: #4A4A4A;
+  font: bold 14px;
+  color: #4a4a4a;
   line-height: 17px;
 }
 
@@ -58,22 +49,23 @@ h2, h4, h5 {
   padding-right: 5%;
 }
 
-
 .date-text {
-  font-style: italic;
-  font-size: 14px;
+  font: italic 14px;
   color: #999999;
   line-height: 16px;
   float: left;
 }
 
 .location-text {
-  font-style: italic;
-  font-size: 14px;
+  font: italic 14px;
   color: #999999;
   line-height: 16px;
   float: right;
+}
 
+#background {
+  background-color: #cfbb71;
+  display: inline-block;
 }
 
 p {
@@ -83,15 +75,14 @@ p {
 }
 
 a {
-  color: #1199C3;
+  color: #1199c3;
   text-decoration: none;
   margin-top: 10px;
   display: block;
-}
+} 
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
+  font: italic 18px;
   color: #513831;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -120,17 +111,19 @@ a {
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .gray {
-  background-color: #FFF9EE;
+  background-color: #eadcab;
+  padding-bottom: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
   clear:both;
 }
-.colour{
-  background-color:#FFF9EE;
+
+.colour {
+  background-color: #efe5c2;
   border-radius: 10px;
   margin-bottom: 10px;
 
@@ -138,13 +131,20 @@ a {
 }
 
 .dark-gray {
-  background-color: #D0BC74;
+  background-color: #d0bc74;
   border-radius: 10px;
+  padding-bottom: 10px;
 }
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #D0BC74;
+  background-color: #d0bc74;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#welcomeMessage {
+  display: inline-block;
+  padding: 1%;
   border-radius: 10px;
 }
 
@@ -167,7 +167,6 @@ ul {
   list-style-type: none;
 }
 
-
 .biopic {
   float: left;
   padding: 10px;
@@ -179,8 +178,6 @@ ul {
 img {
   padding: 10px;
 }
-
-
 /* Bar chart stuff */
 .chart div {
   font: 10px sans-serif;
@@ -189,20 +186,22 @@ img {
   padding: 6px;
   margin: 5px;
   height: 12px;
-  color: #D0BC74;
-  /*display: inline-block;*/
+  color: #d0bc74;
 }
 
 span {
   padding: 5px;
 }
 
-.center-skills{
-
-  padding:5%;
+.center-skills {
+  padding: 5%;
   padding-top: 3%;
   padding-bottom: 3%
+}
 
+.skill-list
+{
+  display: inline;
 }
 
 #letsConnect {
@@ -229,7 +228,6 @@ span {
     width: 150px;
   }
   .welcome-message {
-
     display: none;
   }
 }
@@ -255,8 +253,3 @@ span {
   }
 }
 
-.skill-list
-{
-
-  display: inline;
-}

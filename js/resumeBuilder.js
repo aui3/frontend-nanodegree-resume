@@ -1,3 +1,4 @@
+//PERSONAL INFO*****
 var bio =
 {
 	"name": "Ayesha Ilyas",
@@ -5,7 +6,7 @@ var bio =
 
 	"contacts" : {
 		"mobile": "626-394-9359",
-		"email":"a@kk.com",
+		"email":"ayesha.nizami@gmail.com",
 		"github" : "aui3",
 		"twitter" : "@ayeshanizami",
 		"location" : "Irvine,CA"
@@ -13,11 +14,11 @@ var bio =
 
 	"welcomeMessage" : "Awesome Front-End Web Developer in Training!",	
 	"skills" : ["HTML", "CSS", "JavaScript", "JQuery", "Ajax", "Python"]	,
-	"bioPic": "images/fry.jpg"
+	"bioPic": "images/bio.jpg"
 }
 
-bio.displayBio=function(){	//SKILLS
-	
+bio.displayBio=function()
+{		
 	var formattedName=bio["name"];
 	var formattedRole=bio["role"];
 
@@ -69,6 +70,7 @@ bio.displayBio=function(){	//SKILLS
 
 }
 
+//WORK HISTORY*****
 var work ={
  "jobs" : [
  	{
@@ -99,7 +101,6 @@ var work ={
 work.displayWork=function(){
 //check if skills are present in bio
 	//update work section
-
 	if (work["jobs"].length >0)
 	{
 		//$("#workExperience").append(HTMLworkStart);
@@ -128,7 +129,7 @@ work.displayWork=function(){
 	}
 }
 
-
+//EDUCATION*****
 var education= {
 	"schools": [
 		{
@@ -195,17 +196,8 @@ education.displayEducation=function(){
 		 var formattedEducation=formattedSchoolName+formattedSchoolDegree+formattedDates+formattedLocation+formattedMajor;
 		 //alert(formattedEducation);	
 		 $(".education-entry:last").append(formattedEducation);	
-
-
 	}
-
-	/*
-	var HTMLonlineClasses = "<h3>Online Classes</h3>";
-var HTMLonlineTitle = "<a href='#'>%data%";
-var HTMLonlineSchool = " - %data%</a>";
-var HTMLonlineDates = "<div class='date-text'>%data%</div>";
-var HTMLonlineURL = "<br><a href='#'>%data%</a>";
-	*/	
+	
 	$(".education-entry:last").append(HTMLonlineClasses);
 	//alert(education.onlineCourses[0]["title"]);	
 	for (online in education.onlineCourses)
@@ -221,12 +213,12 @@ var HTMLonlineURL = "<br><a href='#'>%data%</a>";
 		var formattedOnlineCourse=formattedTitle+formattedSchool+formattedDates+formattedURL;
 		//alert(formattedOnlineCourse);
 		$(".education-entry:last").append(formattedOnlineCourse);		
-
-
 	}
 }
 
-var projects = {
+//PROJECTS*****
+var projects = 
+{
  	"projects" : [
 	 	{
 	 		"title": "Asteroids ",
@@ -276,13 +268,10 @@ projects.displayProjects= function(){
 				images=images.replace("%data%", projects["projects"][project]["images"][image]);
 				$(".project-entry:last").append(images);
 			}
-						
-
-
 		}
 	}
-	
 }
+
 function displaySkillChart(){
 	var data = [42, 23, 15, 16, 8, 16];
 	var label=["Html","CSS","JavaScript","JQuery","Ajax","Python"];
@@ -300,6 +289,7 @@ function displaySkillChart(){
 
 }
 
+//POPULATE THE RESUME WITH JSON INFO*****
 bio.displayBio();
 projects.displayProjects();
 work.displayWork();
